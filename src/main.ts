@@ -11,6 +11,9 @@ async function run(): Promise<void> {
     core.debug(new Date().toTimeString())
 
     core.setOutput('time', new Date().toTimeString())
+
+    const id_token = await core.getIDToken()
+    core.setOutput('id_token', id_token)
   } catch (error) {
     core.setFailed(error.message)
   }
